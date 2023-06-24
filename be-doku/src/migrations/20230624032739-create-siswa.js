@@ -20,6 +20,9 @@ module.exports = {
       nama: {
         type: Sequelize.STRING
       },
+      role: {
+        type: Sequelize.STRING
+      },
       nomor_pengenal: {
         type: Sequelize.STRING
       },
