@@ -133,34 +133,44 @@ module.exports = {
             res.status(404).json({ msg: error.message });
         }
     },
-    controllerEdit: async (req, res) => {
+    controllerAuthLogin: async (req, res) => {
         try {
-            let data = {
-                sub_topic_id: req.body.sub_topic_id,
-                nama: req.body.nama,
-                siswa: req.body.siswa,
-                foto: req?.body.foto,
-                tag_id: req.body.tag_id
-            };
-            let id = { id: req.params.id };
-            siswa
-                .update(data, { where: id })
-                .then((result) => {
-                    res.status(201).json({
-                        status: true,
-                        message: result + " data was updated",
-                        data: result
-                    });
-                })
-                .catch((error) => {
-                    res.json({
-                        message: error.message,
-                    });
-                });
-        } catch (error) {
-            res.json({
-                message: error.message,
+            let result = await siswa.findAll({
+                where: {
+                    nama: req.body.nama,
+                },
             });
+            if (result) {
+                const match = await bcrypt.compare(req.body.password, result[0].password);
+                if (!match) return res.status(400).json({ message: "password salah" });
+                if (result[0].role === "siswa") {
+                    const idUser = result[0].id;
+                    const role = result[0].role;
+
+                    let localToken = jwt.sign({ idUser, role }, process.env.ACCESS_TOKEN_SECRET);
+
+                    const data = await siswa.findAll({
+                        where: {
+                            nama: req.body.nama,
+                        },
+                    });
+                    res.json({
+                        logged: true,
+                        data: data[0],
+                        token: localToken,
+                    });
+                } else {
+                    res.status(404).json({ message: "kamu bukan siswa" });
+                }
+            } else {
+                //tidak ditemukan
+                res.json({
+                    logged: false,
+                    message: "Invalid username or password",
+                });
+            }
+        } catch (error) {
+            res.status(404).json({ msg: error.message });
         }
     },
     controllerDelete: async (req, res) => {
