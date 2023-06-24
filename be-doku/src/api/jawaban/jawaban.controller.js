@@ -26,11 +26,8 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            sub_topic_id: req.body.sub_topic_id,
-            nama: req.body.nama,
-            jawaban: req.body.jawaban,
-            foto: req?.body.foto,
-            tag_id: req.body.tag_id
+            pilihan_id: req.body.pilihan_id,
+            opsi: req.body.opsi
         };
 
         jawaban.create(data)
@@ -51,11 +48,8 @@ module.exports = {
     controllerEdit: async (req, res) => {
         try {
             let data = {
-                sub_topic_id: req.body.sub_topic_id,
-                nama: req.body.nama,
-                jawaban: req.body.jawaban,
-                foto: req?.body.foto,
-                tag_id: req.body.tag_id
+                pilihan_id: req.body.pilihan_id,
+                opsi: req.body.opsi
             };
             let id = { id: req.params.id };
             jawaban

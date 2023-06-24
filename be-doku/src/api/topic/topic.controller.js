@@ -26,11 +26,8 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            sub_topic_id: req.body.sub_topic_id,
+            siswa_id: req.body.siswa_id,
             nama: req.body.nama,
-            topic: req.body.topic,
-            foto: req?.body.foto,
-            tag_id: req.body.tag_id
         };
 
         topic.create(data)

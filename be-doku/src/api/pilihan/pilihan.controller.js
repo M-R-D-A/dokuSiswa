@@ -26,11 +26,11 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            sub_topic_id: req.body.sub_topic_id,
-            nama: req.body.nama,
-            pilihan: req.body.pilihan,
-            foto: req?.body.foto,
-            tag_id: req.body.tag_id
+            tugas_pilihan_id: req.body.tugas_pilihan_id,
+            opsi1: req.body.opsi1,
+            opsi2: req.body.opsi2,
+            opsi3: req.body.opsi3,
+            opsi4: req.body.opsi4,
         };
 
         pilihan.create(data)
@@ -51,11 +51,11 @@ module.exports = {
     controllerEdit: async (req, res) => {
         try {
             let data = {
-                sub_topic_id: req.body.sub_topic_id,
-                nama: req.body.nama,
-                pilihan: req.body.pilihan,
-                foto: req?.body.foto,
-                tag_id: req.body.tag_id
+                tugas_pilihan_id: req.body.tugas_pilihan_id,
+                opsi1: req.body.opsi1,
+                opsi2: req.body.opsi2,
+                opsi3: req.body.opsi3,
+                opsi4: req.body.opsi4,
             };
             let id = { id: req.params.id };
             pilihan

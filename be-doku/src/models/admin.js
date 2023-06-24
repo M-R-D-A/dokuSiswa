@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     role: DataTypes.STRING,
+    nama: DataTypes.STRING,
+    password: {
+      type: DataTypes.STRING
+    },
     nomor_pengenal: DataTypes.STRING,
     foto: DataTypes.STRING,
     no_wa: DataTypes.STRING

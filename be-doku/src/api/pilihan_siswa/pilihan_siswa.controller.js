@@ -24,13 +24,10 @@ module.exports = {
         }
     },
     controllerAdd: async (req, res) => {
-
         let data = {
-            sub_topic_id: req.body.sub_topic_id,
-            nama: req.body.nama,
-            pilihan_siswa: req.body.pilihan_siswa,
-            foto: req?.body.foto,
-            tag_id: req.body.tag_id
+            pilihan_id: req.body.pilihan_id,
+            siswa_id: req.body.siswa_id,
+            opsi: req.body.opsi
         };
 
         pilihan_siswa.create(data)

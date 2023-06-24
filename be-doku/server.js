@@ -16,7 +16,7 @@ app.use('/api/admin', admin);
 const guru = require('./src/api/guru/guru.router');
 app.use('/api/guru', guru);
 const jawaban = require('./src/api/jawaban/jawaban.router');
-app.use('/api/jawabana', jawaban);
+app.use('/api/jawaban', jawaban);
 const pilihan_siswa = require('./src/api/pilihan_siswa/pilihan_siswa.router');
 app.use('/api/pilihan_siswa', pilihan_siswa);
 const pilihan = require('./src/api/pilihan/pilihan.router');

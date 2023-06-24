@@ -12,6 +12,12 @@ module.exports = {
       role: {
         type: Sequelize.STRING
       },
+      nama: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
       nomor_pengenal: {
         type: Sequelize.STRING
       },

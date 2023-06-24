@@ -17,10 +17,13 @@ module.exports = {
           key:'id'
         }
       },
+      role: {
+        type: Sequelize.STRING
+      },
       nama: {
         type: Sequelize.STRING
       },
-      role: {
+      password: {
         type: Sequelize.STRING
       },
       nomor_pengenal: {
