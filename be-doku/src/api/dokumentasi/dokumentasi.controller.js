@@ -52,7 +52,7 @@ module.exports = {
         let data = {
             sub_topic_id: req.body.sub_topic_id,
             nama: req.body.nama,
-            dokumentasi: req.body.dokumentasi,
+            dokumentasi: req?.body.dokumentasi,
             foto: req?.body.foto,
             tag_id: req.body.tag_id
         };

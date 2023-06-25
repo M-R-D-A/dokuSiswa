@@ -5,11 +5,10 @@ import { IconContext } from 'react-icons/lib';
 
 
 import { FaPowerOff } from 'react-icons/fa';
-import { MdSpaceDashboard } from 'react-icons/md';
+import { MdSpaceDashboard, MdSchool } from 'react-icons/md';
 import { BsFillBarChartFill } from 'react-icons/bs';
 import { TiGroup } from 'react-icons/ti';
 import { RiCustomerService2Fill } from 'react-icons/ri';
-import { IoDiamond } from 'react-icons/io5';
 const navLinks = [
     {
         role: 'siswa',
@@ -69,7 +68,7 @@ const Sidebars = () => {
                                         <stop stopColor="#591885" offset="100%" />
                                     </linearGradient>
                                 </svg>
-                                <IoDiamond style={{ fill: "url(#blue-gradient)" }} />
+                                <MdSchool style={{ fill: "url(#blue-gradient)" }} />
                             </div>
                             <h1 className='text-purple-500 italic mb-6'> Doku Siswa</h1>
                             <h1 className="text-white font-semibold text-xl uppercase py-2">
