@@ -1,0 +1,1220 @@
+{
+	"info": {
+		"_postman_id": "7c4e9a3c-c4cd-4cac-ba63-e567c0bfa00f",
+		"name": "DOKU SISWA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20267612"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}admin",
+							"host": [
+								"{{baseurl}}admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}admin",
+									"host": [
+										"{{baseurl}}admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "309"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"135-opaJBycm/rx437EJ2w4EP0WsR0o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jun 2023 07:28:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"successful\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"role\": \"admin\",\n            \"nama\": \"ruutto\",\n            \"password\": \"$2b$12$rwi44GVWa0v8sZLsSWiEDOGNpmuBmnvKfg4u8VitGY6.MAoQ8Emri\",\n            \"nomor_pengenal\": \"0812\",\n            \"foto\": \"img-1687590861569.jpg\",\n            \"no_wa\": \"0812\",\n            \"createdAt\": \"2023-06-24T07:14:21.000Z\",\n            \"updatedAt\": \"2023-06-24T07:27:47.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "root",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "root",
+									"type": "text"
+								},
+								{
+									"key": "nomor_pengenal",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/RAFI DUTA/Pictures/billyjoe.jpg"
+								},
+								{
+									"key": "no_wa",
+									"value": "081231501491",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}admin",
+							"host": [
+								"{{baseurl}}admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status code 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "role",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "nama",
+											"value": "root",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "root",
+											"type": "text"
+										},
+										{
+											"key": "nomor_pengenal",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/RAFI DUTA/Pictures/billyjoe.jpg"
+										},
+										{
+											"key": "no_wa",
+											"value": "081231501491",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin",
+									"host": [
+										"{{baseurl}}admin"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-D8KH/tIlej0jlIBcc3w1f+Oc6fE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jun 2023 07:14:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"data has been inserted\",\n    \"data\": {\n        \"role\": \"admin\",\n        \"nama\": \"root\",\n        \"password\": \"$2b$12$rwi44GVWa0v8sZLsSWiEDOGNpmuBmnvKfg4u8VitGY6.MAoQ8Emri\",\n        \"nomor_pengenal\": \"1234\",\n        \"foto\": \"img-1687590861569.jpg\",\n        \"no_wa\": \"081231501491\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Auth Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"root\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}admin/auth",
+							"host": [
+								"{{baseurl}}admin"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nama",
+									"value": "root",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "root",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "nomor_pengenal",
+									"value": "0812",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/RAFI DUTA/Pictures/346478659_264523415978272_4602340844203746926_n.jpg",
+									"disabled": true
+								},
+								{
+									"key": "no_wa",
+									"value": "0812",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}admin/1",
+							"host": [
+								"{{baseurl}}admin"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}admin/1",
+							"host": [
+								"{{baseurl}}admin"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SEKOLAH",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sekolah",
+							"host": [
+								"{{baseurl}}sekolah"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"SMK TELKOM MALANG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}sekolah",
+							"host": [
+								"{{baseurl}}sekolah"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"SD PARE 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}sekolah/3",
+							"host": [
+								"{{baseurl}}sekolah"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sekolah",
+							"host": [
+								"{{baseurl}}sekolah"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GURU",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}guru",
+							"host": [
+								"{{baseurl}}guru"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}guru",
+							"host": [
+								"{{baseurl}}guru"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}guru",
+							"host": [
+								"{{baseurl}}guru"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}guru",
+							"host": [
+								"{{baseurl}}guru"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SISWA",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}siswa",
+							"host": [
+								"{{baseurl}}siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role",
+									"value": "siswa",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "rafi duta",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "roller",
+									"type": "text"
+								},
+								{
+									"key": "no_wa",
+									"value": "0812",
+									"type": "text"
+								},
+								{
+									"key": "sekolah_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "kelas",
+									"value": "9 A",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/RAFI DUTA/Pictures/346478659_264523415978272_4602340844203746926_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseurl}}siswa",
+							"host": [
+								"{{baseurl}}siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}siswa/1",
+							"host": [
+								"{{baseurl}}siswa"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}siswa",
+							"host": [
+								"{{baseurl}}siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AUTH LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"rafi duta\",\r\n    \"password\": \"roller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}siswa/auth",
+							"host": [
+								"{{baseurl}}siswa"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TOPIC",
+			"item": [
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}topic",
+							"host": [
+								"{{baseurl}}topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"siswa_id\": 2,\r\n    \"nama\": \"ipa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}topic",
+							"host": [
+								"{{baseurl}}topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"siswa_id\": 2,\r\n    \"nama\": \"Les GM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}topic/2",
+							"host": [
+								"{{baseurl}}topic"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE TOPIC",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}topic/1",
+							"host": [
+								"{{baseurl}}topic"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SUB_TOPIC",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sub_topic",
+							"host": [
+								"{{baseurl}}sub_topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic_id\": 2,\r\n    \"nama\": \"fisika\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}sub_topic",
+							"host": [
+								"{{baseurl}}sub_topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sub_topic",
+							"host": [
+								"{{baseurl}}sub_topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sub_topic",
+							"host": [
+								"{{baseurl}}sub_topic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DOKUMENTASI",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}dokumentasi",
+							"host": [
+								"{{baseurl}}dokumentasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sub_topic_id\": 2,\r\n    \"nama\": \"gravitasi\",\r\n    \"dokumentasi\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\r\n    \"tag_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}dokumentasi",
+							"host": [
+								"{{baseurl}}dokumentasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}dokumentasi",
+							"host": [
+								"{{baseurl}}dokumentasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}dokumentasi",
+							"host": [
+								"{{baseurl}}dokumentasi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TAG",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tag",
+							"host": [
+								"{{baseurl}}tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tag",
+							"host": [
+								"{{baseurl}}tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tag",
+							"host": [
+								"{{baseurl}}tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE TAG",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tag",
+							"host": [
+								"{{baseurl}}tag"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TUGAS_PILIHAN",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan",
+							"host": [
+								"{{baseurl}}tugas_pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan",
+							"host": [
+								"{{baseurl}}tugas_pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan",
+							"host": [
+								"{{baseurl}}tugas_pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan",
+							"host": [
+								"{{baseurl}}tugas_pilihan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PILIHAN",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan",
+							"host": [
+								"{{baseurl}}pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan",
+							"host": [
+								"{{baseurl}}pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan",
+							"host": [
+								"{{baseurl}}pilihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan",
+							"host": [
+								"{{baseurl}}pilihan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JAWABAN",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}jawaban",
+							"host": [
+								"{{baseurl}}jawaban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}jawaban",
+							"host": [
+								"{{baseurl}}jawaban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}jawaban",
+							"host": [
+								"{{baseurl}}jawaban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}jawaban",
+							"host": [
+								"{{baseurl}}jawaban"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PILIHAN SISWA",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan_siswa",
+							"host": [
+								"{{baseurl}}pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan_siswa",
+							"host": [
+								"{{baseurl}}pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan_siswa",
+							"host": [
+								"{{baseurl}}pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}pilihan_siswa",
+							"host": [
+								"{{baseurl}}pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TUGAS_PILIHAN_SISWA",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan_siswa",
+							"host": [
+								"{{baseurl}}tugas_pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan_siswa",
+							"host": [
+								"{{baseurl}}tugas_pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan_siswa",
+							"host": [
+								"{{baseurl}}tugas_pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}tugas_pilihan_siswa",
+							"host": [
+								"{{baseurl}}tugas_pilihan_siswa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
