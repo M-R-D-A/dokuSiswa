@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       nama: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       dokumentasi: {
         type: Sequelize.STRING

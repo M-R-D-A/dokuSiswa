@@ -7,13 +7,15 @@ const {
     controllerAdd,
     controllerEdit,
     controllerDelete,
+    controllerGetByIdSubTopic,
 } = require('./dokumentasi.controller');
 
 const verifyRoles = require("../../middleware/verifyRoles")
 
-router.get('/', Auth, verifyRoles('admin'), controllerGetAll)
-router.post('/', Auth, verifyRoles('admin'), controllerAdd)
-router.put('/:id', Auth, verifyRoles('admin'), controllerEdit)
-router.delete('/:id', Auth, verifyRoles('admin'), controllerDelete)
+router.get('/', Auth, verifyRoles('admin', 'siswa'), controllerGetAll)
+router.get('/:id', Auth, verifyRoles('admin', 'siswa'), controllerGetByIdSubTopic)
+router.post('/', Auth, verifyRoles('admin', 'siswa'), controllerAdd)
+router.put('/:id', Auth, verifyRoles('admin', 'siswa'), controllerEdit)
+router.delete('/:id', Auth, verifyRoles('admin', 'siswa'), controllerDelete)
 
 module.exports = router;

@@ -23,6 +23,30 @@ module.exports = {
             console.log(error);
         }
     },
+    controllerGetByIdTopic: async (req, res) => {
+        try {
+            await sub_topic
+                .findAll({
+                    where: {
+                        topic_id: req.params.id
+                    }
+                })
+                .then((result) => {
+                    res.json({
+                        status: true,
+                        message: "successful",
+                        data: result,
+                    });
+                })
+                .catch((error) => {
+                    res.json({
+                        message: error.message,
+                    });
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    },
     controllerAdd: async (req, res) => {
 
         let data = {

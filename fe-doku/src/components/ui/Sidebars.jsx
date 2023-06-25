@@ -12,12 +12,11 @@ import { RiCustomerService2Fill } from 'react-icons/ri';
 import { IoDiamond } from 'react-icons/io5';
 const navLinks = [
     {
-        role: 'guest',
+        role: 'siswa',
         links: [
-            { to: '/', label: 'Home' },
-            { to: '/daftar_kamar', label: 'Daftar Kamar' },
-            { to: '/bukti', label: 'Bukti Pemesanan' },
-            { to: '/about', label: 'About' }
+            { to: '/', label: 'Home', icon: <MdSpaceDashboard />  },
+            { to: '/history', label: 'history', icon: <BsFillBarChartFill /> },
+            { to: '/tugas', label: 'tugas', icon: <RiCustomerService2Fill /> },
         ]
     },
     {
@@ -72,7 +71,7 @@ const Sidebars = () => {
                                 </svg>
                                 <IoDiamond style={{ fill: "url(#blue-gradient)" }} />
                             </div>
-                            <h1 className='text-purple-500 italic mb-6'> Hotel Diamond</h1>
+                            <h1 className='text-purple-500 italic mb-6'> Doku Siswa</h1>
                             <h1 className="text-white font-semibold text-xl uppercase py-2">
                                 {role}
                             </h1>

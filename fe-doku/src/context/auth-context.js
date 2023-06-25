@@ -26,11 +26,11 @@ export const AuthContextProvider = (props) => {
   };
 
   const loginHandler = (nama, role) => {
+    console.log('login handler')
     localStorage.setItem("nama", nama);
     localStorage.setItem("userRole", role);
     localStorage.setItem("isLoggedIn", "1");
     setIsLoggedIn(true);
-    console.log("spot 1")
   };
   return (
     <AuthContext.Provider

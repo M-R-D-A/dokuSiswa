@@ -1,16 +1,15 @@
-import React, { useContext, useState } from 'react'
-import AuthContext from '../context/auth-context';
-import axios from 'axios';
+import React, { useContext, useState } from "react";
+import axios from "axios";
+import AuthContext from "../context/auth-context";
 
 const LoginSiswa = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
+  
+  const [nama, setNama] = useState("");
+  const [password, setPassword] = useState("");
   const ctx = useContext(AuthContext);
-
-  const [nama, setNama] = useState('');
-  const [password, setPassword] = useState('');
-
+  
   const handleSubmit = (e) => {
-    console.log(BASE_URL)
     e.preventDefault();
 
     let data = {
@@ -19,8 +18,22 @@ const LoginSiswa = () => {
     }
 
     axios.post(BASE_URL + `siswa/auth`, data)
-      .then(res => {
-        console.log(res.data)
+      .then((res) => {
+        const data = res.data.data;
+
+        console.log(res)
+        console.log("name" + data.nama)
+        console.log("id siswa" + data.id)
+        localStorage.setItem('siswa_id', data.id)
+        localStorage.setItem('token', res.data.token)
+        if (res.data.logged) {
+            ctx.onLogin(data.nama, data.role)
+        }
+        if (data.role === 'siswa') {
+          window.location.href = '/';
+        }
+        console.log('isLoggedIn')
+        // console.log(ctx.isLoggedIn)
       })
       .catch(error => {
         console.log(error.message)

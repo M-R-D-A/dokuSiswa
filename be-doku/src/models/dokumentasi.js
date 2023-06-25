@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     sub_topic_id: DataTypes.INTEGER,
-    nama: DataTypes.INTEGER,
+    nama: DataTypes.STRING,
     dokumentasi: DataTypes.STRING,
     foto: DataTypes.STRING,
     tag_id: DataTypes.INTEGER
