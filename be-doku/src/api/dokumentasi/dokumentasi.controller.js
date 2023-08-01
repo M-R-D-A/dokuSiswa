@@ -6,6 +6,37 @@ module.exports = {
         try {
             await dokumentasi
                 .findAll({
+                    include: [
+                        {
+                            model: models.tag,
+                            attributes: ['nama','background'],
+                            as: "tag",
+                        }
+                    ]
+                })
+                .then((result) => {
+                    res.json({
+                        status: true,
+                        message: "successful",
+                        data: result,
+                    });
+                })
+                .catch((error) => {
+                    res.json({
+                        message: error.message,
+                    });
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    controllerGetById: async (req, res) => {
+        try {
+            await dokumentasi
+                .findOne({
+                    where: {
+                        id: req.params.id
+                    }
                 })
                 .then((result) => {
                     res.json({
@@ -27,6 +58,13 @@ module.exports = {
         try {
             await dokumentasi
                 .findAll({
+                    include: [
+                        {
+                            model: models.tag,
+                            attributes: ['id','nama','background'],
+                            as: "tag",
+                        }
+                    ],
                     where: {
                         sub_topic_id: req.params.id
                     }

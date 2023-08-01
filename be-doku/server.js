@@ -8,33 +8,35 @@ app.use(cors());
 app.use(express.json())
 app.use(express.static(__dirname))
 
+
+const topic = require('./src/api/topic/topic.router');
+app.use('/api/topic', topic);
+const sub_topic = require('./src/api/sub_topic/sub_topic.router');
+app.use('/api/sub_topic', sub_topic);
 const dokumentasi = require('./src/api/dokumentasi/dokumentasi.router');
 app.use('/api/dokumentasi', dokumentasi);
 
-const admin = require('./src/api/admin/admin.router');
-app.use('/api/admin', admin);
-const guru = require('./src/api/guru/guru.router');
-app.use('/api/guru', guru);
+
+const siswa = require('./src/api/siswa/siswa.router');
+app.use('/api/siswa', siswa);
+const tugas_siswa = require('./src/api/tugas_siswa/tugas_siswa.router');
+app.use('/api/tugas_siswa', tugas_siswa);
+
+const tugas = require('./src/api/tugas/tugas.router');
+app.use('/api/tugas', tugas);
 const jawaban = require('./src/api/jawaban/jawaban.router');
 app.use('/api/jawaban', jawaban);
 const pilihan_siswa = require('./src/api/pilihan_siswa/pilihan_siswa.router');
 app.use('/api/pilihan_siswa', pilihan_siswa);
 const pilihan = require('./src/api/pilihan/pilihan.router');
 app.use('/api/pilihan', pilihan);
-const sekolah = require('./src/api/sekolah/sekolah.router');
-app.use('/api/sekolah', sekolah);
-const siswa = require('./src/api/siswa/siswa.router');
-app.use('/api/siswa', siswa);
-const sub_topic = require('./src/api/sub_topic/sub_topic.router');
-app.use('/api/sub_topic', sub_topic);
 const tag = require('./src/api/tag/tag.router');
 app.use('/api/tag', tag);
-const topic = require('./src/api/topic/topic.router');
-app.use('/api/topic', topic);
-const tugas_pilihan_siswa = require('./src/api/tugas_pilihan_siswa/tugas_pilihan_siswa.router');
-app.use('/api/tugas_pilihan_siswa', tugas_pilihan_siswa);
-const tugas_pilihan = require('./src/api/tugas_pilihan/tugas_pilihan.router');
-app.use('/api/tugas_pilihan', tugas_pilihan);
+
+const kelas = require('./src/api/kelas/kelas.router');
+app.use('/api/kelas', kelas);
+const kelas_siswa = require('./src/api/kelas_siswa/kelas_siswa.router');
+app.use('/api/kelas_siswa', kelas_siswa);
 
 app.listen(PORT, () => {
     console.log('server run on port ' + PORT)

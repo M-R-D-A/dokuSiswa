@@ -7,15 +7,11 @@ const {
     controllerAdd,
     controllerEdit,
     controllerDelete,
-    controllerGetByIdSubTopic,
-    controllerGetById,
-} = require('./dokumentasi.controller');
+} = require('./kelas_siswa.controller');
 
 const verifyRoles = require("../../middleware/verifyRoles")
 
 router.get('/', Auth, verifyRoles('admin', 'siswa'), controllerGetAll)
-router.get('/:id', Auth, verifyRoles('admin', 'siswa'), controllerGetById)
-router.get('/sub/:id', Auth, verifyRoles('admin', 'siswa'), controllerGetByIdSubTopic)
 router.post('/', Auth, verifyRoles('admin', 'siswa'), controllerAdd)
 router.put('/:id', Auth, verifyRoles('admin', 'siswa'), controllerEdit)
 router.delete('/:id', Auth, verifyRoles('admin', 'siswa'), controllerDelete)

@@ -26,7 +26,7 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            tugas_pilihan_id: req.body.tugas_pilihan_id,
+            tugas_id: req.body.tugas_id,
             opsi1: req.body.opsi1,
             opsi2: req.body.opsi2,
             opsi3: req.body.opsi3,

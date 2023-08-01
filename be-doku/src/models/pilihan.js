@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "pilihan_siswa_id",
         as: "pilihan_siswa"
       })
-      this.belongsTo(models.tugas_pilihan, {
-        foreignKey: "tugas_pilihan_id",
-        as: "tugas_pilihan"
+      this.belongsTo(models.tugas, {
+        foreignKey: "tugas_id",
+        as: "tugas"
       })
     }
   }

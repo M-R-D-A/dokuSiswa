@@ -51,7 +51,7 @@ const HomeSiswa = () => {
       <div className='flex gap-x-2'>
         {dataTopic.map((item, index) => (
           <Link to={{
-            pathname: '/topic/subtopic',
+            pathname: '/topic/sub',
             search: `?query=${item.id}`,
           }}
             key={index}>

@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.pilihan_siswa, {
+      this.hasMany(models.pilihan, {
         foreignKey: "id",
-        as: "pilihan_siswa"
+        as: "pilihan"
       })
       this.hasMany(models.tag, {
         foreignKey: "id",
@@ -23,13 +23,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id",
         as: "topic"
       })
-      this.hasMany(models.tugas_pilihan_siswa, {
+      this.hasMany(models.tugas_siswa, {
         foreignKey: "id",
-        as: "tugas_pilihan_siswa"
-      })
-      this.belongsTo(models.sekolah, {
-        foreignKey: "sekolah_id",
-        as: "sekolah"
+        as: "tugas_siswa"
       })
     }
   }
@@ -42,13 +38,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     role: DataTypes.STRING,
     nama: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: {
       type: DataTypes.STRING
     },
     nomor_pengenal: DataTypes.STRING,
     no_wa: DataTypes.STRING,
-    sekolah_id: DataTypes.INTEGER,
-    kelas: DataTypes.STRING,
     foto: DataTypes.STRING,
   }, {
     sequelize,

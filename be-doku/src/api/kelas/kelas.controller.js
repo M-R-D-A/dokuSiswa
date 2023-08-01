@@ -1,35 +1,11 @@
 const models = require('../../models/index');
-const sub_topic = models.sub_topic;
+const kelas = models.kelas;
 
 module.exports = {
     controllerGetAll: async (req, res) => {
         try {
-            await sub_topic
+            await kelas
                 .findAll({
-                })
-                .then((result) => {
-                    res.json({
-                        status: true,
-                        message: "successful",
-                        data: result,
-                    });
-                })
-                .catch((error) => {
-                    res.json({
-                        message: error.message,
-                    });
-                });
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    controllerGetByIdTopic: async (req, res) => {
-        try {
-            await sub_topic
-                .findAll({
-                    where: {
-                        topic_id: req.params.id
-                    }
                 })
                 .then((result) => {
                     res.json({
@@ -50,12 +26,12 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            topic_id: req.body.topic_id,
-            nama: req.body.nama,
-            foto: req.body.foto
+            siswa_id: req.body.siswa_id,
+            password: req.body.password,
+            kelas_id: req.body.kelas_id,
         };
 
-        sub_topic.create(data)
+        kelas.create(data)
             .then(async (result) => {
                 res.status(201).json({
                     status: true,
@@ -73,12 +49,11 @@ module.exports = {
     controllerEdit: async (req, res) => {
         try {
             let data = {
-                topic_id: req.body.topic_id,
-                nama: req.body.nama,
-                foto: req.body?.foto
+                kelas_id: req.body.kelas_id,
+                siswa_id: req.body.siswa_id
             };
             let id = { id: req.params.id };
-            sub_topic
+            kelas
                 .update(data, { where: id })
                 .then((result) => {
                     res.status(201).json({
@@ -102,7 +77,7 @@ module.exports = {
         try {
             let id = { id: req.params.id };
 
-            sub_topic
+            kelas
                 .destroy({ where: id })
                 .then((result) => {
                     res.status(201).json({

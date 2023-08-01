@@ -57,7 +57,7 @@ const SubTopic = () => {
             <div className='flex gap-x-2'>
                 {dataSubTopic.map((item, index) => (
                     < Link to={{
-                        pathname: '/subtopic/dokumentasi',
+                        pathname: '/topic/sub/doku',
                         search: `?query=${item.id}`,
                     }}>
                         <div className="hover:scale-105 transition ease-in-out duration-500 bg-secondary-dark-bg text-emerald-500 uppercase rounded-md p-0.5 mb-4" key={index}>

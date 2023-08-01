@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     sub_topic_id: DataTypes.INTEGER,
     nama: DataTypes.STRING,
-    dokumentasi: DataTypes.STRING,
+    dokumentasi: DataTypes.TEXT,
     foto: DataTypes.STRING,
     tag_id: DataTypes.INTEGER
   }, {

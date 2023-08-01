@@ -36,9 +36,9 @@ module.exports = {
         let data = {
             role: req.body.role,
             nama: req.body.nama,
+            email: req.body.email,
             password: hashPass,
             no_wa: req.body.no_wa,
-            sekolah_id: req.body.sekolah_id,
             kelas: req.body.kelas,
             foto: req?.body.foto
         };
@@ -74,17 +74,17 @@ module.exports = {
                 let data = {
                     role: req.body.role,
                     nama: req.body.nama,
+                    email: req.body.email,
                     password: hashPass,
                     no_wa: req.body.no_wa,
-                    sekolah_id: req.body.sekolah_id,
                     kelas: req.body.kelas,
                     foto: req?.body.foto
                 };
                 let dataNoPsw = {
                     role: req.body.role,
                     nama: req.body.nama,
+                    email: req.body.email,
                     no_wa: req.body.no_wa,
-                    sekolah_id: req.body.sekolah_id,
                     kelas: req.body.kelas,
                     foto: req?.body.foto
                 };

@@ -1,35 +1,11 @@
 const models = require('../../models/index');
-const sub_topic = models.sub_topic;
+const tugas_pilihan = models.tugas_pilihan;
 
 module.exports = {
     controllerGetAll: async (req, res) => {
         try {
-            await sub_topic
+            await tugas_pilihan
                 .findAll({
-                })
-                .then((result) => {
-                    res.json({
-                        status: true,
-                        message: "successful",
-                        data: result,
-                    });
-                })
-                .catch((error) => {
-                    res.json({
-                        message: error.message,
-                    });
-                });
-        } catch (error) {
-            console.log(error);
-        }
-    },
-    controllerGetByIdTopic: async (req, res) => {
-        try {
-            await sub_topic
-                .findAll({
-                    where: {
-                        topic_id: req.params.id
-                    }
                 })
                 .then((result) => {
                     res.json({
@@ -50,12 +26,14 @@ module.exports = {
     controllerAdd: async (req, res) => {
 
         let data = {
-            topic_id: req.body.topic_id,
-            nama: req.body.nama,
-            foto: req.body.foto
+            kelas_id: req.body.kelas_id,
+            aktif: req.body.aktif,
+            deadline: req.body.deadline,
+            kelas: req.body.kelas,
+            nama: req.body.nama
         };
 
-        sub_topic.create(data)
+        tugas_pilihan.create(data)
             .then(async (result) => {
                 res.status(201).json({
                     status: true,
@@ -73,12 +51,14 @@ module.exports = {
     controllerEdit: async (req, res) => {
         try {
             let data = {
-                topic_id: req.body.topic_id,
-                nama: req.body.nama,
-                foto: req.body?.foto
+                kelas_id: req.body.kelas_id,
+                aktif: req.body.aktif,
+                deadline: req.body.deadline,
+                kelas: req.body.kelas,
+                nama: req.body.nama
             };
             let id = { id: req.params.id };
-            sub_topic
+            tugas_pilihan
                 .update(data, { where: id })
                 .then((result) => {
                     res.status(201).json({
@@ -102,7 +82,7 @@ module.exports = {
         try {
             let id = { id: req.params.id };
 
-            sub_topic
+            tugas_pilihan
                 .destroy({ where: id })
                 .then((result) => {
                     res.status(201).json({

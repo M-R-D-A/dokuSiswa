@@ -2,34 +2,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('siswa', {
+    await queryInterface.createTable('schedules', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      role: {
+      day: {
         type: Sequelize.STRING
       },
-      nama: {
+      name: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
-      },
-      password: {
-        type: Sequelize.STRING
-      },
-      nomor_pengenal: {
-        type: Sequelize.STRING
-      },
-      foto: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      no_wa: {
-        type: Sequelize.STRING
+      active: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -42,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('siswa');
+    await queryInterface.dropTable('schedules');
   }
 };

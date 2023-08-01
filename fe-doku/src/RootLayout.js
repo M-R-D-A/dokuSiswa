@@ -1,24 +1,23 @@
 import { Outlet } from "react-router-dom";
 
 import Sidebars from "./components/ui/Sidebars";
+import { Fragment } from "react";
 
 const RootLayout = () => {
     return (
-        <>
-            <div className="flex w-screen h-screen bg-main-bg">
-                <div className="relative w-auto">
-                    <div className="flex">
-                        <Sidebars />
-                        <main className="w-full overflow-hidden min-h-screen h-screen scrollbar-hide">
-                            <div className="h-full p-6">
-                                <Outlet />
-                            </div>
-                        </main>
-                    </div>
+        <Fragment>
+            <div className="flex h-screen w-screen overflow-x-hidden bg-main-bg">
+                <div className="absolute">
+                    <Sidebars />
                 </div>
+                    <div className="ml-20 sm:ml-30 lg:ml-56 bg-red-500 w-screen">
+                        <main className=" bg-main-bg pt-4 flex-1 ">
+                            <Outlet />
+                        </main>
 
+                    </div>
             </div>
-        </>
+        </Fragment>
     )
 }
 

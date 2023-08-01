@@ -2,48 +2,39 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const ModalDokumentasi = (props) => {
-    const [dataTag, setDataTag] = useState([])
-    const [tagId, setTagId] = useState();
+const ModalTag = (props) => {
     const [name, setName] = useState('');
+    const dataColor = ['#FF6A81', '#6CE1AE', '#48B8F1', '#BC5EF6', '#FB934E', '#E9E059']
+
+    const [background, setBackground] = useState('');
+    const [text, setText] = useState('');
+
     const handleNameChange = (e) => {
         setName(e.target.value);
     }
-    const getDataTag = () => {
-        const token = localStorage.getItem('token')
-        axios.get(BASE_URL + `tag/sub/${props.subTopicId}`, { headers: { Authorization: `Bearer ${token}` } })
-            .then(res => {
-                console.log(res.data.data);
-                setDataTag(res.data.data)
-            })
-            .catch(err => {
-                console.log(err.message);
-                console.log(err.response.data);
-            })
-    }
-    useEffect(() => {
-        getDataTag();
-    }, [props])
+
+
 
     const handleSave = (e) => {
         e.preventDefault();
 
         console.log('hai')
+        console.log(props)
 
         const token = localStorage.getItem('token')
 
         let form = {
+            siswa_id: props.siswaId,
             sub_topic_id: props.subTopicId,
+            background: background,
+            text: 'text-white',
             nama: name,
-            dokumentasi: "",
-            tag_id: tagId
         }
 
         if (props.action === 'insert') {
-            axios.post(BASE_URL + `dokumentasi`, form, { headers: { Authorization: `Bearer ${token}` } })
+            axios.post(BASE_URL + `tag`, form, { headers: { Authorization: `Bearer ${token}` } })
                 .then(res => {
                     console.log(res);
-                    console.log(form);
                     props.onSubmit();
                     props.handlerHideModal();
                 })
@@ -52,8 +43,8 @@ const ModalDokumentasi = (props) => {
                 })
         } else if (props.action === 'update') {
             console.log('update')
-            console.log(`id subtopic : ${props.id}`)
-            axios.put(BASE_URL + `dokumentasi/${props.id}`, form, { headers: { Authorization: `Bearer ${token}` } })
+            console.log(`id Topic : ${props.id}`)
+            axios.put(BASE_URL + `tag/${props.id}`, form, { headers: { Authorization: `Bearer ${token}` } })
                 .then(res => {
                     props.onSubmit();
                     console.log(res.data.message);
@@ -81,13 +72,13 @@ const ModalDokumentasi = (props) => {
                                     if (props.action === 'insert') {
                                         return (
                                             <h1 className="text-2xl font-semibold text-purple-500  text-center">
-                                                Tambah Data Dokumentasi
+                                                Tambah Tag
                                             </h1>
                                         )
                                     } else if (props.action === 'update') {
                                         return (
                                             <h1 className="text-2xl font-semibold text-purple-500  text-center">
-                                                Edit Data Dokumentasi
+                                                Edit Tag
                                             </h1>
                                         )
                                     }
@@ -121,17 +112,19 @@ const ModalDokumentasi = (props) => {
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-3 p-5 gap-x-2 gap-y-2.5'>
-                                {dataTag.map((item, index) => (
-                                    <button 
-                                    key={index + 1}
-                                    onClick={() => setTagId(item.id)}
-                                    className={
-                                        tagId === item.id 
-                                        ? 'text-center border-white border-1 text-sm px-5 py-2 rounded-full text-white'
-                                        : 'text-center hover:border-white border-1 border-transparent text-sm px-5 py-2 rounded-full text-white'} style={{backgroundColor: item.background}}>
-                                        {item.nama}
-                                    </button>
+                            <h1 className='px-5 pt-2 text-lg text-white'>Pilih Warna Tag</h1>
+                            <div className='flex  p-5 gap-x-2'>
+                                {dataColor.map((item, index) => (
+                                    <div
+                                        onClick={() => setBackground(item)}
+                                        className={
+                                            background === item
+                                                ? 'w-1/4 px-5 py-2 border-white border-2 rounded-full text-center'
+                                                : 'w-1/4 px-5 py-2 hover:border-white border-2 border-transparent rounded-full text-center'
+                                        }
+                                        style={{ backgroundColor: item }}>
+                                        {index + 1}
+                                    </div>
                                 ))}
                             </div>
 
@@ -153,4 +146,4 @@ const ModalDokumentasi = (props) => {
     )
 }
 
-export default ModalDokumentasi
+export default ModalTag

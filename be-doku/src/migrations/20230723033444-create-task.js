@@ -2,34 +2,24 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('siswa', {
+    await queryInterface.createTable('tasks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      role: {
-        type: Sequelize.STRING
-      },
       nama: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
+      jam: {
+        type: Sequelize.DOUBLE
       },
-      password: {
-        type: Sequelize.STRING
+      date: {
+        type: Sequelize.DATE
       },
-      nomor_pengenal: {
-        type: Sequelize.STRING
-      },
-      foto: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      no_wa: {
-        type: Sequelize.STRING
+      active: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -42,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('siswa');
+    await queryInterface.dropTable('tasks');
   }
 };

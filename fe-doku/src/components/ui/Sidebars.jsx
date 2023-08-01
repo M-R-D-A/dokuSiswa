@@ -18,22 +18,6 @@ const navLinks = [
             { to: '/tugas', label: 'tugas', icon: <RiCustomerService2Fill /> },
         ]
     },
-    {
-        role: 'resepsionis',
-        links: [
-            { to: '/', label: 'Pemesanan' },
-            { to: '/resp/detail', label: 'Detail' }
-        ]
-    },
-    {
-        role: 'admin',
-        links: [
-            { to: '/', label: 'Home', icon: <MdSpaceDashboard /> },
-            { to: '/penjualan', label: 'Penjualan', icon: <BsFillBarChartFill /> },
-            { to: '/manajer', label: 'Manajer', icon: <TiGroup /> },
-            { to: '/resepsionis', label: 'Resepsionis', icon: <RiCustomerService2Fill /> }
-        ]
-    }
 ];
 
 
@@ -51,7 +35,7 @@ const Sidebars = () => {
         <aside className="z-20 lg:relative transition-all font-lato">
 
             {/* wrapper */}
-            <div className='w-30 md:w-60 py-3 px-5 h-screen relative overflow-y-auto shadow-md drop-shadow-md bg-main-dark-bg transition-all duration-300 scrollbar-hide'>
+            <div className='w-20 sm:w-30 lg:w-52 py-3 h-screen relative overflow-y-auto shadow-md drop-shadow-md bg-main-dark-bg transition-all duration-300 scrollbar-hide'>
 
                 {/* wrapper navigation button */}
                 <div className="md:space-y-4 md:w-full">
